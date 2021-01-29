@@ -7,8 +7,8 @@ class UserSeeder extends \CodeIgniter\Database\Seeder
     public function run()
     {
         UserRepository::create([
-                        'name' => 'مدیر',
-                        'family' => 'کل',
+                'name' => 'مدیر',
+                'family' => 'کل',
             'email' => 'admin@admin.com',
             'password' => '123456',
             'role' => 'admin'
