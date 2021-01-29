@@ -30,7 +30,15 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Home::index');
+if (file_exists(APPPATH . 'Routes/Cli.php')) {
+    require APPPATH . 'Routes/Cli.php';
+}
+if (file_exists(APPPATH . 'Routes/Development.php')) {
+    require APPPATH . 'Routes/Development.php';
+}
+if (file_exists(APPPATH . 'Routes/Web.php')) {
+    require APPPATH . 'Routes/Web.php';
+}
 
 /**
  * --------------------------------------------------------------------
